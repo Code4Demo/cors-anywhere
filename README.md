@@ -167,6 +167,27 @@ export CORSANYWHERE_RATELIMIT='50 3 my.example.com my2.example.com'
 node server.js
 ```
 
+### Docker Support
+```
+docker build \
+--build-arg http_proxy=${http_proxy} \
+--build-arg https_proxy=${https_proxy}  \
+-t code4demo/cors-anywhere:latest \
+./
+```
+
+```
+docker rm -f cors-anywhere \
+&& \
+docker run -d -it \
+--name cors-anywhere \
+--restart always \
+-e "CORSANYWHERE_WHITELIST=https://app.graphxr.cn,http://app.graphxr.cn" \
+-e "CORSANYWHERE_RATELIMIT='10 1 app.graphxr.cn'" \
+-e "requireHeader=['Origin','X-Requested-With','Content-Type','Accept']" \
+-p 8080:8080 \
+code4demo/cors-anywhere:latest
+```
 
 ## License
 
