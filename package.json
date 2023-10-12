@@ -45,7 +45,7 @@
     "lint": "eslint .",
     "test": "mocha ./test/test*.js --reporter spec",
     "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec",
-    "docker_build": "docker build -t code4demo/cors-anywhere:latest ./  --no-cache",
+    "docker_build": "docker build --build-arg http_proxy=${http_proxy} --build-arg https_proxy=${https_proxy} -t code4demo/cors-anywhere:latest ./  --no-cache",
     "docker_push": "docker push code4demo/cors-anywhere:latest"
   },
   "engines": {

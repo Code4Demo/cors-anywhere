@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:18-alpine
 
 LABEL maintainer="Sean <sean@kineviz.com>"
 
@@ -8,8 +8,8 @@ WORKDIR /data
 RUN mkdir -p /data
 VOLUME /data
 
-# Install cors-anywhere#master
-RUN yarn add github:code4demo/cors-anywhere#master
+# Install cors-anywhere#docker
+RUN yarn add github:code4demo/cors-anywhere#docker
 
 EXPOSE 8080
 
