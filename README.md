@@ -183,8 +183,9 @@ docker run -d -it \
 --name cors-anywhere \
 --restart always \
 -e "CORSANYWHERE_WHITELIST=https://app.graphxr.cn,http://app.graphxr.cn" \
--e "CORSANYWHERE_RATELIMIT='10 1 app.graphxr.cn'" \
--e "requireHeader=['X-Requested-With','Content-Type','Accept']" \
+-e "CORSANYWHERE_RATELIMIT='10000 1 app.graphxr.cn'" \
+-e "CORSANYWHERE_REQUIRE_HEADER=x-requested-with,content-type,accept" \
+-e "CORSANYWHERE_REMOVE_HEADERS=origin,referred,referer" \
 -p 8080:8080 \
 code4demo/cors-anywhere:latest
 ```
