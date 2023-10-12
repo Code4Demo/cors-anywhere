@@ -26,5 +26,5 @@ it's recommended to not manually set these headers in your code.
 
 
 Demo          :   https://robwu.nl/cors-anywhere.html
-Source code   :   https://github.com/Rob--W/cors-anywhere/
-Documentation :   https://github.com/Rob--W/cors-anywhere/#documentation
+Source code   :   https://github.com/Code4Demo/cors-anywhere/tree/docker
+Documentation :   https://github.com/Code4Demo/cors-anywhere/tree/docker/#documentation
